@@ -110,3 +110,7 @@ Test suites cover:
 ## Demo
 <img width="1728" height="892" alt="image" src="https://github.com/user-attachments/assets/4539d071-9e1c-40bd-b805-8989d5b16334" />
 
+## Acknowledgements
+
+This project was built with the help of an AI agent (GitHub Copilot). The core logic and structure were designed by the agent, while I provided guidance on features, testing, and styling. It was a collaborative effort to create a fun and interactive probe simulator!
+
