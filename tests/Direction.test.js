@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import DIRECTIONS, { turnRight, turnLeft, delta } from "../Direction";
+import DIRECTIONS, { turnRight, turnLeft, delta } from "../src/core/Direction";
 
 describe("Direction", () => {
   describe("DIRECTIONS constant", () => {

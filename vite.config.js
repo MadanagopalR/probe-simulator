@@ -8,5 +8,8 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     open: true
+  },
+  test: {
+    include: ['tests/**/*.test.js'],
   }
 })

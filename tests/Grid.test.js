@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import Grid from "../Grid";
+import Grid from "../src/core/Grid";
 
 describe("Grid", () => {
   describe("construction", () => {

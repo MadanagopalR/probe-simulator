@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import Grid from "../Grid";
-import Probe from "../Probe";
+import Grid from "../src/core/Grid";
+import Probe from "../src/core/Probe";
 
 describe("Probe", () => {
   const grid = new Grid(5);
