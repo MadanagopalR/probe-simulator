@@ -1,11 +1,13 @@
 const DIRECTIONS = ["NORTH", "EAST", "SOUTH", "WEST"];
 
 export function turnRight(direction) {
-  return DIRECTIONS[(DIRECTIONS.indexOf(direction) + 1) % 4];
+  const i = DIRECTIONS.indexOf(direction);
+  return DIRECTIONS[(i + 1) % 4];
 }
 
 export function turnLeft(direction) {
-  return DIRECTIONS[(DIRECTIONS.indexOf(direction) + 3) % 4];
+  const i = DIRECTIONS.indexOf(direction);
+  return DIRECTIONS[(i + 3) % 4];
 }
 
 export function delta(direction) {

@@ -22,7 +22,7 @@ const DIRECTION_ROTATION = {
 export default function App() {
   const [gridSize, setGridSize] = useState(DEFAULT_SIZE);
   const grid = useMemo(() => new Grid(gridSize, OBSTACLES_MAP[gridSize] || []), [gridSize]);
-  const [probe, setProbe] = useState(() => new Probe(grid, 0, gridSize - 1, "NORTH"));
+  const [probe, setProbe] = useState(() => new Probe(grid, 0, gridSize - 1, "EAST"));
   const [commands, setCommands] = useState("");
   const [error, setError] = useState("");
   const [blockType, setBlockType] = useState(null);
@@ -65,14 +65,14 @@ export default function App() {
   const changeGridSize = (newSize) => {
     setGridSize(newSize);
     const newGrid = new Grid(newSize, OBSTACLES_MAP[newSize] || []);
-    setProbe(new Probe(newGrid, 0, newSize - 1, "NORTH"));
+    setProbe(new Probe(newGrid, 0, newSize - 1, "EAST"));
     setCommands("");
     setError("");
     setBlockType(null);
   };
 
   const reset = () => {
-    setProbe(new Probe(grid, 0, gridSize - 1, "NORTH"));
+    setProbe(new Probe(grid, 0, gridSize - 1, "EAST"));
     setCommands("");
     setError("");
     setBlockType(null);
@@ -145,6 +145,7 @@ export default function App() {
           value={commands}
           onChange={(e) => setCommands(e.target.value.toUpperCase())}
           onKeyDown={(e) => e.key === "Enter" && runCommands()}
+          placeholder="FFRRBB"
         />
         <button onClick={runCommands}>Run</button>
         <button className="reset" onClick={reset}>Reset</button>

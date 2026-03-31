@@ -9,61 +9,17 @@ describe("Direction", () => {
   });
 
   describe("turnRight", () => {
-    it("turns NORTH → EAST", () => {
-      expect(turnRight("NORTH")).toBe("EAST");
-    });
-
-    it("turns EAST → SOUTH", () => {
-      expect(turnRight("EAST")).toBe("SOUTH");
-    });
-
-    it("turns SOUTH → WEST", () => {
-      expect(turnRight("SOUTH")).toBe("WEST");
-    });
-
-    it("turns WEST → NORTH (wraps around)", () => {
-      expect(turnRight("WEST")).toBe("NORTH");
-    });
-
-    it("completes a full 360° rotation back to the start", () => {
-      let dir = "NORTH";
-      for (let i = 0; i < 4; i++) dir = turnRight(dir);
-      expect(dir).toBe("NORTH");
-    });
+    it("NORTH → EAST", () => expect(turnRight("NORTH")).toBe("EAST"));
+    it("EAST → SOUTH", () => expect(turnRight("EAST")).toBe("SOUTH"));
+    it("SOUTH → WEST", () => expect(turnRight("SOUTH")).toBe("WEST"));
+    it("WEST → NORTH", () => expect(turnRight("WEST")).toBe("NORTH"));
   });
 
   describe("turnLeft", () => {
-    it("turns NORTH → WEST", () => {
-      expect(turnLeft("NORTH")).toBe("WEST");
-    });
-
-    it("turns WEST → SOUTH", () => {
-      expect(turnLeft("WEST")).toBe("SOUTH");
-    });
-
-    it("turns SOUTH → EAST", () => {
-      expect(turnLeft("SOUTH")).toBe("EAST");
-    });
-
-    it("turns EAST → NORTH (wraps around)", () => {
-      expect(turnLeft("EAST")).toBe("NORTH");
-    });
-
-    it("completes a full 360° counter-clockwise rotation", () => {
-      let dir = "NORTH";
-      for (let i = 0; i < 4; i++) dir = turnLeft(dir);
-      expect(dir).toBe("NORTH");
-    });
-  });
-
-  describe("turnLeft and turnRight are inverses", () => {
-    it.each(DIRECTIONS)("turnLeft(turnRight(%s)) === %s", (dir) => {
-      expect(turnLeft(turnRight(dir))).toBe(dir);
-    });
-
-    it.each(DIRECTIONS)("turnRight(turnLeft(%s)) === %s", (dir) => {
-      expect(turnRight(turnLeft(dir))).toBe(dir);
-    });
+    it("NORTH → WEST", () => expect(turnLeft("NORTH")).toBe("WEST"));
+    it("WEST → SOUTH", () => expect(turnLeft("WEST")).toBe("SOUTH"));
+    it("SOUTH → EAST", () => expect(turnLeft("SOUTH")).toBe("EAST"));
+    it("EAST → NORTH", () => expect(turnLeft("EAST")).toBe("NORTH"));
   });
 
   describe("delta", () => {
